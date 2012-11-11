@@ -11,31 +11,12 @@ block content
                 #droptext drop <strong>package.json</strong> here
             output#list
             fieldset
-                legend or paste your package.json
+                legend or paste your package.json below 
+                    small
+                        a(href="#sample") (load sample)
                 .control-group
                     label.control-label(for="packagetextarea")
-                    textarea.span10#packagetextarea(name="data", rows=20)
-                        |{
-                        |  "name": "nko3-woah",
-                        |  "version": "0.0.0",
-                        |  "description": "woah",
-                        |  "main": "server.js",
-                        |  "scripts": {
-                        |    "start": "node server.js"
-                        |  },
-                        |  "repository": {
-                        |    "type": "git",
-                        |    "url": "git@github.com:nko3/woah.git"
-                        |  },
-                        |  "dependencies": {
-                        |    "express": "3.0.2",
-                        |    "jade": ">= 0.0.1"
-                        |  },
-                        |  "engines": {
-                        |    "node": "0.8.x"
-                        |  },
-                        |  "subdomain": "woah.nko3"
-                        |}
+                    textarea.span10#packagetextarea(name="data", rows=20)= data
                 input.btn.btn-large(type="submit",value="Send")
 
     h2(data-bind='text: package().name')

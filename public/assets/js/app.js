@@ -53,3 +53,17 @@ function handleDragOver(e) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
 }
+
+
+
+
+// populate the text area with a sample package.json
+$(document).on('click','a[href=#sample]', function(e){
+	e.preventDefault();
+	$.get('/sample.txt')
+	.then(function(s){
+		$('textarea').val(s);
+		$('form').submit();
+	});
+});
+
