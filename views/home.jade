@@ -2,22 +2,26 @@ extends layout
 
 block content
 
-    .page-header
-        h1 naptime - the npm dependency viewer
+    .subhead
+        h2 Easily view your projects dependencies
+        h2 See how current your project is
 
-    .row
-        form.well(method="post")
+    form.well(method="post")
+
+        fieldset
+            legend Paste your package.json
+            .control-group
+                label.control-label(for="packagetextarea")
+                textarea.span10#packagetextarea(name="data", rows=5)= data
+            legend or...
             #dropzone
                 #droptext drop <strong>package.json</strong> here
-            output#list
-            fieldset
-                legend or paste your package.json below 
-                    small
-                        a(href="#sample") (load sample)
-                .control-group
-                    label.control-label(for="packagetextarea")
-                    textarea.span10#packagetextarea(name="data", rows=20)= data
-                input.btn.btn-large(type="submit",value="Send")
+
+        fieldset
+            input.btn.btn-large(type="submit",value="Send")
+
+    small.pull-right
+        a(href="#sample") (load sample)
 
     h2(data-bind='text: package().name')
 
