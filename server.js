@@ -21,22 +21,29 @@ app.configure('production', function(){
 });
 
 
+app.locals.ctx = 'root';
+app.locals.data = '';
+
+
 app.post('/', function(req, res, next){
     var jsonStr = req.body.data,
         js = JSON.parse(jsonStr),
         deps = js.dependencies;
 
-    res.render('home', {ctx:'root',deps:deps});
+    res.locals.data = jsonStr;
+
+    res.render('home', {deps:deps});
 
 });
 
 app.get('/', function(req, res){
-    res.render('home',{ctx:'root', deps:[]});
+    res.render('home',{deps:[]});
 });
 
 app.get('/npm/:name', function(req, res){
     var name = req.params.name;
-    res.render('npm',{ctx:'package', name:name});
+    res.locals.ctx = 'package';
+    res.render('npm',{name:name});
 });
 
 // /history?name=underscore
