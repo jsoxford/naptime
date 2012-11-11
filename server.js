@@ -60,5 +60,9 @@ app.get('/history', function(req,res){
 });
 
 
-var server = app.listen(process.env.PORT || 3000);
-console.log('Express server started on port %s', server.address().port);
+var server = app.listen(process.env.PORT || 3000, function (err) {
+  if (err) {
+    throw err; // For completeness's sake.
+  }
+  console.log('Express server started on port %s', server.address().port);
+});
