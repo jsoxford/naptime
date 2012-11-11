@@ -13,12 +13,12 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(req, res){
-	res.render('home');
+	res.render('home',{ctx:'root'});
 });
 
 app.get('/npm/:package', function(req, res){
 	var name = req.params.package;
-	res.render('npm',{name:name});
+	res.render('npm',{ctx:'package', name:name});
 });
 
 

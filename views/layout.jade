@@ -1,11 +1,20 @@
 doctype 5
 html(lang="en")
+    head
+        title naptime
 
-    link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.no-icons.min.css",
-        rel="stylesheet")
+        link(href="//bootswatch.com/slate/bootstrap.min.css", rel="stylesheet")
 
-    script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js")
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+        script(src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js")
+        script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js")
+        script
 
-    body
+    body(data-ctx=ctx)
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a.brand(href="/") naptime
+
         .container
             block content
