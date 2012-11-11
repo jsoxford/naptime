@@ -5,9 +5,10 @@ function RootViewModel() {
 
     $('.package-graph').each(function() {
         var deps = $(this).data('deps');
-        $.each(deps, function(name) {
+        $.each(deps, function(name, version) {
             var package = new Package();
             package.name(name);
+            package.version(version);
             self.package().dependencies.push(package);
 
             var tolerance = 1;

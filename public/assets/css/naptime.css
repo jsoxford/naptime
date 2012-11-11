@@ -1,7 +1,7 @@
 .main{margin-top:50px;}
-#dropzone{width:100%;border:3px dashed #ccc;background:#fefefe;}
+#dropzone{width:100%;border:3px dashed #ccc;background:#fefefe;margin-bottom:20px;}
 #droptext{text-align:center;padding:20px;font-size:1.3em;}
-#packagetextarea{}
+#packagetextarea{width: 99%;}
 
 .clearfix:after {
     content: ".";
@@ -59,3 +59,5 @@ html[xmlns] .clearfix {
 .package-graph .version:hover {
     background: #5af;
 }
+
+.footer{border-top:1px solid #ccc;margin-top:20px;}

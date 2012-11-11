@@ -16,3 +16,7 @@ function PackageVersion() {
         return parseInt((new Date() - self.replaced().getTime()) / 1000 / 60 / 60 / 24);
     };
 }
+
+PackageVersion.prototype.satisfies = function(parent){
+	return semver.satisfies(this.version(), parent.version());
+};
