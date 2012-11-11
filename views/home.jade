@@ -7,9 +7,57 @@ block content
 
 
     .row
-        form.well
+        form.well(method="post")
             fieldset
                 legend paste your package.json
                 .control-group
                     label.control-label(for="packagetextarea")
-                    textarea.input-xlarge#packagetextarea
+                    textarea.span10#packagetextarea(name="data", rows=20)
+                        |{
+                        |  "name": "nko3-woah",
+                        |  "version": "0.0.0",
+                        |  "description": "woah",
+                        |  "main": "server.js",
+                        |  "scripts": {
+                        |    "start": "node server.js"
+                        |  },
+                        |  "repository": {
+                        |    "type": "git",
+                        |    "url": "git@github.com:nko3/woah.git"
+                        |  },
+                        |  "dependencies": {
+                        |    "express": "3.0.2",
+                        |    "jade": ">= 0.0.1"
+                        |  },
+                        |  "engines": {
+                        |    "node": "0.8.x"
+                        |  },
+                        |  "subdomain": "woah.nko3"
+                        |}
+                input.btn.btn-large(type="submit",value="Send")
+
+
+    ul
+        for version, name in deps
+            li(data-depname=name)
+                h1= name
+                h2= version
+                ol
+
+    script
+        $(function(){
+            $('[data-depname]').each(function(){
+                var $this = $(this);
+
+                var name = $(this).data('depname');
+                console.log(name);
+                $.get('/history', {name:name})
+                .done(function(data){
+                    console.log("GOT", data)
+                    $.each(data, function(version, time){
+                        var li = $('<li>').text(version + ' : ' + time);
+                        $this.find('ol').append(li)
+                    })
+                })
+            })
+        })
