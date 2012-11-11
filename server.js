@@ -26,7 +26,7 @@ app.post('/', function(req, res, next){
         js = JSON.parse(jsonStr),
         deps = js.dependencies;
 
-    res.render('home', {deps:deps});
+    res.render('home', {ctx:'root',deps:deps});
 
 });
 
