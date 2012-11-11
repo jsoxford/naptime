@@ -2,4 +2,14 @@ extends layout
 
 block content
 
-	h1 hello
+    .page-header
+        h1 naptime - the npm dependency viewer
+
+
+    .row
+        form.well
+            fieldset
+                legend paste your package.json
+                .control-group
+                    label.control-label(for="packagetextarea")
+                    textarea.input-xlarge#packagetextarea
