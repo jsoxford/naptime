@@ -3,15 +3,18 @@ function RootViewModel() {
 
     self.package = ko.observable(new Package());
 
-    $('.deps').each(function() {
+    $('.package-graph').each(function() {
         var deps = $(this).data('deps');
         $.each(deps, function(name) {
-            $.get('/history', {name:name}).done(function(data) {
+            var package = new Package();
+            package.name(name);
+            self.package().dependencies.push(package);
+
+            $.get('/history', {name: name}).done(function(data) {
                 $.each(data, function(version, released) {
                     var packageVersion = new PackageVersion();
                     packageVersion.loadFromData({version: version, released: released});
-                    self.package().dependencies().push(packageVersion);
-                    console.log(packageVersion.version());
+                    package.versions.push(packageVersion);
                 });
             });
         });

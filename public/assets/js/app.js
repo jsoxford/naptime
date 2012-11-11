@@ -5,5 +5,6 @@ var pageBindings = {
 
 $(document).ready(function(){
     var ctx = $('body').data('ctx');
-    ko.applyBindings(new pageBindings[ctx]());
+    pageBinding = new pageBindings[ctx]();
+    ko.applyBindings(pageBinding);
 });

@@ -34,6 +34,7 @@ function Package() {
     self.dependencies = ko.observableArray([]);
     self.engines = ko.observableArray([]);
     self.subdomain = ko.observable("");
+    self.versions = ko.observableArray([]);
 
     self.loadFromData = function(data){
 
