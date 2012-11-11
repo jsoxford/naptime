@@ -1,7 +1,12 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(8000);
+var express = require('express'),
+    app = express();
 
-console.log('Server running at http://0.0.0.0:8000/');
+
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.static(__dirname + '/public'));
+
+
+var server = app.listen(3000);
+console.log('Express server started on port %s', server.address().port);
