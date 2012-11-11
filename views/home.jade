@@ -7,8 +7,11 @@ block content
 
     .row
         form.well(method="post")
+            #dropzone
+                #droptext drop <strong>package.json</strong> here
+            output#list
             fieldset
-                legend paste your package.json
+                legend or paste your package.json
                 .control-group
                     label.control-label(for="packagetextarea")
                     textarea.span10#packagetextarea(name="data", rows=20)

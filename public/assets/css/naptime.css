@@ -1,1 +1,4 @@
 .main{margin-top:50px;}
+#dropzone{width:100%;border:3px dashed #ccc;background:#fefefe;}
+#droptext{text-align:center;padding:20px;font-size:1.3em;}
+#packagetextarea{}
