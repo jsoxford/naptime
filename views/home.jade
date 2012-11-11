@@ -3,13 +3,15 @@ extends layout
 block content
 
     .subhead
-        h2 Easily view your projects dependencies
+        h2 View your projects dependencies
         h2 See how current your project is
 
     form.well(method="post")
 
         fieldset
             legend Paste your package.json
+                small.pull-right
+                    a(href="#sample") (load sample)
             .control-group
                 label.control-label(for="packagetextarea")
                 textarea.span10#packagetextarea(name="data", rows=5)= data
@@ -20,8 +22,7 @@ block content
         fieldset
             input.btn.btn-large(type="submit",value="Send")
 
-    small.pull-right
-        a(href="#sample") (load sample)
+
 
     h2(data-bind='text: package().name')
 
