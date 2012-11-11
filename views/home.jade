@@ -5,7 +5,6 @@ block content
     .page-header
         h1 naptime - the npm dependency viewer
 
-
     .row
         form.well(method="post")
             #dropzone
@@ -39,28 +38,5 @@ block content
                         |}
                 input.btn.btn-large(type="submit",value="Send")
 
+    .deps(data-deps=deps)
 
-    ul
-        for version, name in deps
-            li(data-depname=name)
-                h1= name
-                h2= version
-                ol
-
-    script
-        $(function(){
-            $('[data-depname]').each(function(){
-                var $this = $(this);
-
-                var name = $(this).data('depname');
-                console.log(name);
-                $.get('/history', {name:name})
-                .done(function(data){
-                    console.log("GOT", data)
-                    $.each(data, function(version, time){
-                        var li = $('<li>').text(version + ' : ' + time);
-                        $this.find('ol').append(li)
-                    })
-                })
-            })
-        })
