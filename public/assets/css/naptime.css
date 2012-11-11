@@ -40,7 +40,7 @@ html[xmlns] .clearfix {
     position: absolute;
     height: 100%;
     background: #49d;
-    border-left: #27b 1px solid;
+    border-left: #38c 1px solid;
     float: left; width: 1px;
 }
 .package-graph .version label {
@@ -51,6 +51,7 @@ html[xmlns] .clearfix {
     margin: 0;
     font-size: 10px;
     background: #eee;
+    border: #aaa 1px solid;
     z-index: 1000000;
 }
 
