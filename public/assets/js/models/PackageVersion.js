@@ -9,3 +9,7 @@ function PackageVersion() {
         self.released(data.released);
     };
 }
+
+PackageVersion.prototype.satisfies = function(parent){
+	return semver.satisfies(this.version(), parent.version());
+};

@@ -9,6 +9,7 @@ html(lang="en")
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
         script(src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js")
         script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js")
+        script(src="/assets/js/semver.js")
         script(src="/assets/js/models/Package.js")
         script(src="/assets/js/models/PackageVersion.js")
         script(src="/assets/js/pagebindings/PackageViewModel.js")
@@ -22,6 +23,17 @@ html(lang="en")
                     a.brand(href="/") naptime dependency viewer
 
         .container.main
+
+            iframe.pull-right(
+                src="http://nodeknockout.com/iframe/woah",
+                frameborder="0",
+                scrolling="no",
+                allowtransparency="true",
+                width="115",
+                height="25"
+                )
+
+
             block content
 
         footer.footer.container
