@@ -24,6 +24,8 @@ html[xmlns] .clearfix {
     height: 1%;
 }
 
+.package {margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #ccc;}
+
 .package-graph {
     margin-bottom: 10px;
 }
