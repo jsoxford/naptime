@@ -11,7 +11,7 @@ block content
                 #droptext drop <strong>package.json</strong> here
             output#list
             fieldset
-                legend or paste your package.json below 
+                legend or paste your package.json below
                     small
                         a(href="#sample") (load sample)
                 .control-group
@@ -24,6 +24,6 @@ block content
     section.package-graph(data-deps=deps, data-bind='foreach: package().dependencies')
         .package
             h2(data-bind='text: name')
-            .versions(data-bind='foreach: versions')
-                .version(data-bind="attr: {'data-time': released}")
+            .versions.clearfix(data-bind='foreach: versions')
+                .version(data-bind="attr: {'style': 'right:'+position()+'px; width:'+length()+'px;'}")
                     label(data-bind='text: version')
