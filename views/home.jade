@@ -25,7 +25,6 @@ block content
     section.package-graph(data-deps=deps, data-bind='foreach: package().dependencies')
         .package
             h2(data-bind='text: name')
-            p(data-bind='text: diffInfo')
             .versions.clearfix(data-bind='foreach: versions')
                 .version(data-bind="attr: {'style': 'right:'+position()+'px; width:'+length()+'px;'}")
                     label(data-bind='text: version')
