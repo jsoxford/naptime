@@ -4,11 +4,14 @@ html(lang="en")
         title naptime
 
         link(href="//bootswatch.com/slate/bootstrap.min.css", rel="stylesheet")
+        link(href="/assets/css/naptime.css", rel="stylesheet")
 
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
         script(src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js")
         script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js")
-        script
+        script(src="/assets/js/models/Package.js")
+        script(src="/assets/js/pagebindings/PackageViewModel.js")
+        script(src="/assets/js/app.js")
 
     body(data-ctx=ctx)
         .navbar.navbar-fixed-top
@@ -16,5 +19,5 @@ html(lang="en")
                 .container
                     a.brand(href="/") naptime
 
-        .container
+        .container.main
             block content

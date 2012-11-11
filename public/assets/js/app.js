@@ -1,11 +1,10 @@
 
 
 $(document).ready(function(){
-
-    var ctx = $(body).data('ctx');
+    var ctx = $('body').data('ctx');
 
     if(ctx='package'){
-        ko.applyBindings("PackageWiewModel");
+        ko.applyBindings(new PackageViewModel());
     }
 
 });

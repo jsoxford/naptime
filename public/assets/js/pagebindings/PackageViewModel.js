@@ -3,4 +3,8 @@ function PackageViewModel() {
 
     self.package = ko.observable(new Package());
 
+    self.dependentPackages = ko.observableArray();
+
+
+
 }
