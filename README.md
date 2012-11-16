@@ -12,7 +12,7 @@ git clone git@github.com:nko3/woah.git
 
 ~~~sh
 npm install -g jitsu
-jitsu login --username nko3-woah --password YVATRVm/186DU1n+
+jitsu login --username nko3-woah --password our-new-password
 jitsu deploy
 ~~~
 
